@@ -62,7 +62,24 @@
     <button onclick="cekPW()">selanjutnya</button>
   </div>
 
-  <script src="tersambung1.js"></script>
+  <script>// Menyapa pengguna saat membuka halaman
+let nama = prompt('Siapa nama Anda?');
+document.getElementById("output").innerHTML = "Halo " + nama;
+document.getElementById("atas").innerHTML = "Lagi apa, " + nama + "?";
+
+// Fungsi untuk mengecek password
+function cekPW(){
+  let password = document.getElementById("pw").value;
+
+  if (password === "codingan dapa") {
+    // Jika password benar, pindah ke halaman lain
+    window.location.href = "Dapit.html";
+  } else {
+    // Jika salah, tampilkan peringatan
+    alert("Password salah, coba lagi.");
+  }
+}
+</script>
   
 </body>
 </html>
