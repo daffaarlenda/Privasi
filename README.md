@@ -6,7 +6,7 @@
   <title>Document</title>
   <style>
   body {
-  background-image: url('https://files.catbox.moe/40aeja.jpg');
+  background-image: url('https://files.catbox.moe/wkikjn.jpg');
   background-size: cover;
   background-position: center;
 }
